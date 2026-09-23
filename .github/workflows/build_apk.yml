@@ -3,7 +3,7 @@ name: Build Android APK
 on:
   push:
     branches:
-      - main     # Ganti 'master' jika branch utamamu bernama master
+      - master     # Ganti 'master' jika branch utamamu bernama master
   workflow_dispatch: # Agar bisa menjalankan build secara manual dari web GitHub
 
 jobs:
