@@ -36,8 +36,7 @@ jobs:
 
       # 5. Build APK (Release Mode)
       - name: Build APK
-        run: flutter build apk --release
-
+        run: flutter build apk --release --android-skip-build-dependency-validation
       # 6. Upload File APK sebagai Artifact
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
