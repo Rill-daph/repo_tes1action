@@ -1,83 +1,135 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(tes());
+  runApp(aplikasi_wisata());
 }
 
-class tes extends StatefulWidget {
+class aplikasi_wisata extends StatefulWidget {
   @override
-  State<tes> createState() => tes_State();
+  State<aplikasi_wisata> createState() => aplikasi_wisata_State();
 }
 
-class tes_State extends State<tes> {
-  TextEditingController nama_controller = TextEditingController();
-  TextEditingController password_controller = TextEditingController();
-  String pesan = '';
-  //function
-  void login() {
-    setState(() {
-      nama_controller;
-      password_controller;
-
-      if (nama_controller.text == '' && password_controller.text == '') {
-        pesan = 'Salah, login gagal ulangi lagi';
-      } else if (nama_controller.text == 'pau-pau' &&
-          password_controller.text == 'paupau') {
-        pesan = 'login berhasil';
-      } else {
-        pesan = 'login gagal';
-      }
-    });
-  }
-
+class aplikasi_wisata_State extends State<aplikasi_wisata> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xffbab5a2),
-        ),
-        body: Center(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 50,
-              ),
-              Center(
-                child: Text("LOGIN PAGE"),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-              TextField(
-                controller: nama_controller,
-                decoration: InputDecoration(
-                    labelText: "usn",
-                    hintText: "Username",
-                    border: OutlineInputBorder()),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextField(
-                controller: password_controller,
-                decoration: InputDecoration(
-                    labelText: "pwd",
-                    hintText: "Password",
-                    border: OutlineInputBorder()),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  login();
-                },
-                child: Text("login"),
-              ),
-              Text(pesan)
-            ],
+          backgroundColor: Color(0xffd2c7c7),
+          title: Text(
+            "Warna Warni Village",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
           ),
+        ),
+        body: Column(
+          children: [
+            // GAMBAR
+            SizedBox(height: 10),
+            Image.asset(
+              'assets/kampung-warna-warni-image-by-instagram-@fajarhw.png',
+              width: double.infinity,
+              height: 270,
+              fit: BoxFit.cover,
+            ),
+
+            // ALAMAT DAN KONTAK
+            Container(
+              color: Color(0xffffffff),
+              padding: EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  // ALAMAT
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text(
+                          "Alamat",
+                          style: TextStyle(
+                            color: Color(0xff000000),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          "Jodipan, Malang",
+                          style: TextStyle(
+                            color: Color(0xff0a0a0a),
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // KONTAK
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text(
+                          "Kontak",
+                          style: TextStyle(
+                            color: Color(0xff000000),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          "0812-3456-7890",
+                          style: TextStyle(
+                            color: Color(0xff000000),
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // DETAIL WISATA
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Color(0xffd2c7c7),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    Text(
+                      "Detail Wisata",
+                      style: TextStyle(
+                        color: Color(0xff000000),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Kampung Warna Warni Jodipan merupakan "
+                      "salah satu tempat wisata di Kota Malang "
+                      "yang terkenal dengan rumah-rumah berwarna "
+                      "cerah dan pemandangan yang menarik.",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xff000000),
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
