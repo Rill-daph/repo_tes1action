@@ -28,10 +28,11 @@ class aplikasi_wisata_State extends State<aplikasi_wisata> {
         body: Column(
           children: [
             // GAMBAR
+            SizedBox(height: 10),
             Image.asset(
               'assets/kampung-warna-warni-image-by-instagram-@fajarhw.png',
               width: double.infinity,
-              height: 331,
+              height: 270,
               fit: BoxFit.cover,
             ),
 
@@ -93,33 +94,39 @@ class aplikasi_wisata_State extends State<aplikasi_wisata> {
             ),
 
             // DETAIL WISATA
-            Container(
-              color: Color(0xffd2c7c7),
-              width: double.infinity,
-              padding: EdgeInsets.all(20),
-              child: Column(
-                children: [
-                  Text(
-                    "Detail Wisata",
-                    style: TextStyle(
-                      color: Color(0xff000000),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Color(0xffd2c7c7),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    Text(
+                      "Detail Wisata",
+                      style: TextStyle(
+                        color: Color(0xff000000),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    "Kampung Warna Warni Jodipan merupakan "
-                    "salah satu tempat wisata di Kota Malang "
-                    "yang terkenal dengan rumah-rumah berwarna "
-                    "cerah dan pemandangan yang menarik.",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color(0xff000000),
-                      fontSize: 14,
+                    SizedBox(height: 10),
+                    Text(
+                      "Kampung Warna Warni Jodipan merupakan "
+                      "salah satu tempat wisata di Kota Malang "
+                      "yang terkenal dengan rumah-rumah berwarna "
+                      "cerah dan pemandangan yang menarik.",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color(0xff000000),
+                        fontSize: 14,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
